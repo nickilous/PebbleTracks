@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
+
     <uses-permission android:name="com.google.android.apps.mytracks.READ_TRACK_DATA" />
     <uses-permission android:name="com.google.android.apps.mytracks.WRITE_TRACK_DATA" />
     <uses-permission android:name="com.google.android.apps.mytracks.TRACK_NOTIFICATIONS" />
@@ -25,6 +26,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name="com.nickilous.pebbletracks.PebbleTracksBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.android.apps.mytracks.TRACK_STARTED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.apps.mytracks.TRACK_STOPPED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
