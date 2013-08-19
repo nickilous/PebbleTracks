@@ -38,6 +38,12 @@
                 <action android:name="com.google.android.apps.mytracks.TRACK_STOPPED" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name="com.nickilous.pebbletracks.PebbleMyTracksService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>
