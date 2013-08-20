@@ -28,7 +28,7 @@
         </activity>
 
         <receiver
-            android:name="com.nickilous.pebbletracks.PebbleTracksBroadcastReceiver"
+            android:name="com.nickilous.broadcastreceivers.pebble.PebbleTracksBroadcastReceiver"
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
@@ -43,7 +43,43 @@
             android:name="com.nickilous.pebbletracks.PebbleMyTracksService"
             android:enabled="true"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.android.apps.mytracks.TRACK_STARTED" />
+            </intent-filter>
         </service>
+
+        <receiver
+            android:name="com.nickilous.broadcastreceivers.pebble.PebbleWatchBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.getpebble.action.app.RECEIVE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.nickilous.pebbletracks.broadcastreceivers.MyTracksLaunchedBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.android.apps.mytracks.TRACK_STARTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.nickilous.broadcastreceivers.pebble.PebbleAckBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.getpebble.action.app.ACK" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.nickilous.broadcastreceivers.pebble.PebbleNackBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.getpebble.action.app.NACK" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
